@@ -147,19 +147,27 @@ fetch("tracy.json")
             .attr("stroke", "#333");
 
           g.append("rect")
-            .attr("x", cx - boxWidth / 2)
-            .attr("width", boxWidth)
-            .attr("y", yScale(stats.q3))
-            .attr("height", yScale(stats.q1) - yScale(stats.q3))
-            .attr("fill", color[outcome])
-            .attr("stroke", "#000")
-            .style("cursor", "pointer")
-            .on("click", function () {
-              const boxKey = `${risk}-${outcome}-${variable}`;
-              if (selectedBox === boxKey) {
-                d3.select("#detailsBox").html(`<strong>Click a boxplot</strong> to see details here`);
-                selectedBox = null;
-              } else {
+          .attr("x", cx - boxWidth / 2)
+          .attr("width", boxWidth)
+          .attr("y", yScale(stats.q3))
+          .attr("height", yScale(stats.q1) - yScale(stats.q3))
+          .attr("fill", color[outcome])
+          .attr("stroke", "#000")
+          .style("cursor", "pointer")
+          .on("mouseover", function () {
+            d3.select(this)
+              .attr("fill", d3.color(color[outcome]).brighter(0.7));
+          })
+          .on("mouseout", function () {
+            d3.select(this)
+              .attr("fill", color[outcome]);
+          })
+          .on("click", function () {
+            const boxKey = `${risk}-${outcome}-${variable}`;
+            if (selectedBox === boxKey) {
+              d3.select("#detailsBox").html(`<strong>Click a boxplot</strong> to see details here`);
+              selectedBox = null;
+            } else {
                 const opDurations = filtered.map(d => {
                   const start = new Date(d.opstart);
                   const end = new Date(d.opend);
