@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Compact D3 Box Plots</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="tracy.css">
+</head>
+<body>
+  <h2>Surgical Risk Explorer: Outcomes and Stats by Surgery Risk Level</h2>
+
+  <select id="metricSelector"></select>
+
+  <div class="main-container">
+    <div class="plot-container">
+      <svg id="plot"></svg>
+      <button id="resetButton">Reset Filters</button>
+    </div>
+
+    <div id="detailsBox">
+      <strong>Click a boxplot</strong> to see details here.
+    </div>
+  </div>
+
+  <script src="tracy.js"></script>
+</body>
+</html>

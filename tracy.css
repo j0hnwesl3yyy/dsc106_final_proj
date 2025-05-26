@@ -1,0 +1,128 @@
+/* General styling */
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Metric selector */
+#metricSelector {
+  display: block;
+  margin: 0 auto 30px auto;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: white;
+}
+
+/* Layout container */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* SVG styling */
+svg {
+  width: 300px;
+  height: 350px;
+  font-size: 9px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  display: block;
+}
+
+/* Box for showing clicked plot info */
+#detailsBox {
+  max-width: 300px;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+/* Table inside detailsBox */
+#detailsBox table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+#detailsBox td {
+  padding: 2px 5px;
+}
+
+#detailsBox strong {
+  color: #444;
+  font-size: 15px;
+}
+
+/* Optional: Tooltip styles */
+.tooltip {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  pointer-events: none;
+  display: none;
+}
+
+/* Reset button styling */
+button {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.plot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#resetButton {
+  margin-top: 15px;
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+#resetButton:hover {
+  background-color: #0056b3;
+}
