@@ -1,0 +1,1979 @@
+{
+  "region_summary": [
+    {
+      "region": "abdomen",
+      "case_count": 2777,
+      "mort_rate": 0.01,
+      "mean_ebl": 465.2,
+      "mean_los": 11.08,
+      "pct_emergent": 0.14,
+      "pct_ASA3plus": 0.13
+    },
+    {
+      "region": "head_neck",
+      "case_count": 229,
+      "mort_rate": 0.0,
+      "mean_ebl": 88.6,
+      "mean_los": 4.1,
+      "pct_emergent": 0.0,
+      "pct_ASA3plus": 0.0
+    },
+    {
+      "region": "other",
+      "case_count": 2393,
+      "mort_rate": 0.01,
+      "mean_ebl": 339.25,
+      "mean_los": 11.72,
+      "pct_emergent": 0.16,
+      "pct_ASA3plus": 0.15
+    },
+    {
+      "region": "pelvis",
+      "case_count": 58,
+      "mort_rate": 0.02,
+      "mean_ebl": 425.44,
+      "mean_los": 5.03,
+      "pct_emergent": 0.0,
+      "pct_ASA3plus": 0.02
+    },
+    {
+      "region": "thorax",
+      "case_count": 931,
+      "mort_rate": 0.0,
+      "mean_ebl": 143.69,
+      "mean_los": 7.38,
+      "pct_emergent": 0.02,
+      "pct_ASA3plus": 0.06
+    }
+  ],
+  "proc_by_region": [
+    {
+      "region": "abdomen",
+      "opname": "Anterior resection",
+      "case_count": 247,
+      "mort_rate": 0.0,
+      "mean_ebl": 157.9,
+      "mean_los": 9.42
+    },
+    {
+      "region": "abdomen",
+      "opname": "Appendectomy",
+      "case_count": 56,
+      "mort_rate": 0.0,
+      "mean_ebl": 56.67,
+      "mean_los": 7.38
+    },
+    {
+      "region": "abdomen",
+      "opname": "Cholecystectomy",
+      "case_count": 503,
+      "mort_rate": 0.0,
+      "mean_ebl": 101.77,
+      "mean_los": 3.52
+    },
+    {
+      "region": "abdomen",
+      "opname": "Distal gastrectomy",
+      "case_count": 342,
+      "mort_rate": 0.01,
+      "mean_ebl": 181.26,
+      "mean_los": 12.22
+    },
+    {
+      "region": "abdomen",
+      "opname": "Donor hepatectomy",
+      "case_count": 70,
+      "mort_rate": 0.0,
+      "mean_ebl": 408.64,
+      "mean_los": 8.63
+    },
+    {
+      "region": "abdomen",
+      "opname": "Donor nephrectomy",
+      "case_count": 84,
+      "mort_rate": 0.0,
+      "mean_ebl": 176.57,
+      "mean_los": 5.4
+    },
+    {
+      "region": "abdomen",
+      "opname": "Exploratory laparotomy",
+      "case_count": 215,
+      "mort_rate": 0.06,
+      "mean_ebl": 1059.93,
+      "mean_los": 24.49
+    },
+    {
+      "region": "abdomen",
+      "opname": "Hemihepatectomy",
+      "case_count": 88,
+      "mort_rate": 0.02,
+      "mean_ebl": 927.78,
+      "mean_los": 13.16
+    },
+    {
+      "region": "abdomen",
+      "opname": "Hernia repair",
+      "case_count": 163,
+      "mort_rate": 0.0,
+      "mean_ebl": 47.11,
+      "mean_los": 4.31
+    },
+    {
+      "region": "abdomen",
+      "opname": "Ileostomy repair",
+      "case_count": 109,
+      "mort_rate": 0.01,
+      "mean_ebl": 69.49,
+      "mean_los": 7.74
+    },
+    {
+      "region": "abdomen",
+      "opname": "Incisional hernia repair",
+      "case_count": 66,
+      "mort_rate": 0.02,
+      "mean_ebl": 66.79,
+      "mean_los": 5.79
+    },
+    {
+      "region": "abdomen",
+      "opname": "Kidney transplantation",
+      "case_count": 128,
+      "mort_rate": 0.0,
+      "mean_ebl": 275.73,
+      "mean_los": 19.59
+    },
+    {
+      "region": "abdomen",
+      "opname": "Liver segmentectomy",
+      "case_count": 95,
+      "mort_rate": 0.0,
+      "mean_ebl": 383.68,
+      "mean_los": 10.05
+    },
+    {
+      "region": "abdomen",
+      "opname": "Liver transplantation",
+      "case_count": 108,
+      "mort_rate": 0.03,
+      "mean_ebl": 2566.7,
+      "mean_los": 33.24
+    },
+    {
+      "region": "abdomen",
+      "opname": "Low anterior resection",
+      "case_count": 181,
+      "mort_rate": 0.0,
+      "mean_ebl": 219.76,
+      "mean_los": 8.83
+    },
+    {
+      "region": "abdomen",
+      "opname": "Metastasectomy",
+      "case_count": 102,
+      "mort_rate": 0.0,
+      "mean_ebl": 100.67,
+      "mean_los": 5.01
+    },
+    {
+      "region": "abdomen",
+      "opname": "Pylorus preserving pancreaticoduodenectomy",
+      "case_count": 123,
+      "mort_rate": 0.01,
+      "mean_ebl": 397.24,
+      "mean_los": 17.28
+    },
+    {
+      "region": "abdomen",
+      "opname": "Total gastrectomy",
+      "case_count": 97,
+      "mort_rate": 0.02,
+      "mean_ebl": 193.08,
+      "mean_los": 14.22
+    },
+    {
+      "region": "head_neck",
+      "opname": "Thyroid lobectomy",
+      "case_count": 115,
+      "mort_rate": 0.0,
+      "mean_ebl": 78.57,
+      "mean_los": 3.65
+    },
+    {
+      "region": "head_neck",
+      "opname": "Total thyroidectomy",
+      "case_count": 114,
+      "mort_rate": 0.0,
+      "mean_ebl": 96.15,
+      "mean_los": 4.54
+    },
+    {
+      "region": "other",
+      "opname": "Abdominoperineal resection",
+      "case_count": 15,
+      "mort_rate": 0.0,
+      "mean_ebl": 1239.29,
+      "mean_los": 13.67
+    },
+    {
+      "region": "other",
+      "opname": "Adhesiolysis",
+      "case_count": 10,
+      "mort_rate": 0.0,
+      "mean_ebl": 147.14,
+      "mean_los": 29.5
+    },
+    {
+      "region": "other",
+      "opname": "Adrenalectomy",
+      "case_count": 23,
+      "mort_rate": 0.0,
+      "mean_ebl": 167.33,
+      "mean_los": 6.91
+    },
+    {
+      "region": "other",
+      "opname": "Ampullectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 200.0,
+      "mean_los": 31.0
+    },
+    {
+      "region": "other",
+      "opname": "Anal fistulotomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 25.0,
+      "mean_los": 2.0
+    },
+    {
+      "region": "other",
+      "opname": "Aneurysmal repair",
+      "case_count": 7,
+      "mort_rate": 0.0,
+      "mean_ebl": 2282.86,
+      "mean_los": 23.14
+    },
+    {
+      "region": "other",
+      "opname": "Aortofemoral bypass",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 1150.0,
+      "mean_los": 11.0
+    },
+    {
+      "region": "other",
+      "opname": "Aortoiliac bypass",
+      "case_count": 15,
+      "mort_rate": 0.0,
+      "mean_ebl": 1271.33,
+      "mean_los": 14.2
+    },
+    {
+      "region": "other",
+      "opname": "Aortorenal bypass",
+      "case_count": 4,
+      "mort_rate": 0.0,
+      "mean_ebl": 500.0,
+      "mean_los": 9.25
+    },
+    {
+      "region": "other",
+      "opname": "Arteriovenous fistula",
+      "case_count": 29,
+      "mort_rate": 0.0,
+      "mean_ebl": 26.4,
+      "mean_los": 4.86
+    },
+    {
+      "region": "other",
+      "opname": "Arteriovenous fistula thrombectomy",
+      "case_count": 6,
+      "mort_rate": 0.0,
+      "mean_ebl": 280.0,
+      "mean_los": 22.17
+    },
+    {
+      "region": "other",
+      "opname": "Arteriovenous graft",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 55.0,
+      "mean_los": 19.5
+    },
+    {
+      "region": "other",
+      "opname": "Axillary lymph node dissection",
+      "case_count": 5,
+      "mort_rate": 0.0,
+      "mean_ebl": 30.0,
+      "mean_los": 5.0
+    },
+    {
+      "region": "other",
+      "opname": "Bile duct anastomosis",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 9.0
+    },
+    {
+      "region": "other",
+      "opname": "Biopsy",
+      "case_count": 51,
+      "mort_rate": 0.02,
+      "mean_ebl": 54.17,
+      "mean_los": 6.67
+    },
+    {
+      "region": "other",
+      "opname": "Bleeding control",
+      "case_count": 33,
+      "mort_rate": 0.09,
+      "mean_ebl": 976.25,
+      "mean_los": 28.61
+    },
+    {
+      "region": "other",
+      "opname": "Breast reconstruction",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 8.0
+    },
+    {
+      "region": "other",
+      "opname": "Bullectomy",
+      "case_count": 30,
+      "mort_rate": 0.0,
+      "mean_ebl": 40.0,
+      "mean_los": 6.0
+    },
+    {
+      "region": "other",
+      "opname": "Cecectomy",
+      "case_count": 4,
+      "mort_rate": 0.0,
+      "mean_ebl": 100.0,
+      "mean_los": 7.0
+    },
+    {
+      "region": "other",
+      "opname": "Central pancreatectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 11.0
+    },
+    {
+      "region": "other",
+      "opname": "Cervical esophagostomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 250.0,
+      "mean_los": 33.0
+    },
+    {
+      "region": "other",
+      "opname": "Cesarean section",
+      "case_count": 23,
+      "mort_rate": 0.04,
+      "mean_ebl": 637.5,
+      "mean_los": 14.57
+    },
+    {
+      "region": "other",
+      "opname": "Choledochal cyst excision",
+      "case_count": 5,
+      "mort_rate": 0.0,
+      "mean_ebl": 200.0,
+      "mean_los": 8.0
+    },
+    {
+      "region": "other",
+      "opname": "Choledochoscopic bile duct stone removal",
+      "case_count": 3,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 6.33
+    },
+    {
+      "region": "other",
+      "opname": "Clagett procedure",
+      "case_count": 4,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 41.0
+    },
+    {
+      "region": "other",
+      "opname": "Cleaning of wound",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 57.5
+    },
+    {
+      "region": "other",
+      "opname": "Closure of arteriovenous fistula",
+      "case_count": 4,
+      "mort_rate": 0.0,
+      "mean_ebl": 20.0,
+      "mean_los": 7.0
+    },
+    {
+      "region": "other",
+      "opname": "Closure of bronchopleural fistula",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 56.0
+    },
+    {
+      "region": "other",
+      "opname": "Closure of wound",
+      "case_count": 13,
+      "mort_rate": 0.08,
+      "mean_ebl": 58.57,
+      "mean_los": 40.92
+    },
+    {
+      "region": "other",
+      "opname": "Colostomy",
+      "case_count": 20,
+      "mort_rate": 0.1,
+      "mean_ebl": 77.78,
+      "mean_los": 16.4
+    },
+    {
+      "region": "other",
+      "opname": "Colostomy repair",
+      "case_count": 5,
+      "mort_rate": 0.2,
+      "mean_ebl": 150.0,
+      "mean_los": 25.6
+    },
+    {
+      "region": "other",
+      "opname": "Completion mastectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 2.0
+    },
+    {
+      "region": "other",
+      "opname": "Completion thyroidectomy",
+      "case_count": 6,
+      "mort_rate": 0.0,
+      "mean_ebl": 45.0,
+      "mean_los": 4.33
+    },
+    {
+      "region": "other",
+      "opname": "Debridement of wound",
+      "case_count": 38,
+      "mort_rate": 0.0,
+      "mean_ebl": 169.17,
+      "mean_los": 61.66
+    },
+    {
+      "region": "other",
+      "opname": "Debulking surgery",
+      "case_count": 19,
+      "mort_rate": 0.0,
+      "mean_ebl": 911.67,
+      "mean_los": 12.63
+    },
+    {
+      "region": "other",
+      "opname": "Decortication",
+      "case_count": 8,
+      "mort_rate": 0.0,
+      "mean_ebl": 368.75,
+      "mean_los": 16.62
+    },
+    {
+      "region": "other",
+      "opname": "Delorme's operation",
+      "case_count": 8,
+      "mort_rate": 0.0,
+      "mean_ebl": 46.67,
+      "mean_los": 5.5
+    },
+    {
+      "region": "other",
+      "opname": "Diagnostic laparoscopy",
+      "case_count": 33,
+      "mort_rate": 0.03,
+      "mean_ebl": 300.0,
+      "mean_los": 17.21
+    },
+    {
+      "region": "other",
+      "opname": "Diagnostic pelviscopy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 5.0
+    },
+    {
+      "region": "other",
+      "opname": "Diagnostic procedure",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 300.0,
+      "mean_los": 5.0
+    },
+    {
+      "region": "other",
+      "opname": "Distal pancreatectomy",
+      "case_count": 52,
+      "mort_rate": 0.0,
+      "mean_ebl": 262.65,
+      "mean_los": 12.1
+    },
+    {
+      "region": "other",
+      "opname": "Diverticulectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 10.0
+    },
+    {
+      "region": "other",
+      "opname": "Electrocauterization",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 2.0
+    },
+    {
+      "region": "other",
+      "opname": "Elosser operation",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 40.0
+    },
+    {
+      "region": "other",
+      "opname": "Embolectomy",
+      "case_count": 11,
+      "mort_rate": 0.0,
+      "mean_ebl": 500.0,
+      "mean_los": 20.91
+    },
+    {
+      "region": "other",
+      "opname": "Empyemectomy",
+      "case_count": 3,
+      "mort_rate": 0.0,
+      "mean_ebl": 176.67,
+      "mean_los": 6.0
+    },
+    {
+      "region": "other",
+      "opname": "Endarterectomy",
+      "case_count": 14,
+      "mort_rate": 0.07,
+      "mean_ebl": 480.77,
+      "mean_los": 13.5
+    },
+    {
+      "region": "other",
+      "opname": "Endovascular aneurysmal repair",
+      "case_count": 7,
+      "mort_rate": 0.0,
+      "mean_ebl": 250.0,
+      "mean_los": 17.57
+    },
+    {
+      "region": "other",
+      "opname": "Enucleation of esophageal tumor",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 3.5
+    },
+    {
+      "region": "other",
+      "opname": "Enucleation of pancreas",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 75.0,
+      "mean_los": 9.5
+    },
+    {
+      "region": "other",
+      "opname": "Esophagectomy",
+      "case_count": 18,
+      "mort_rate": 0.0,
+      "mean_ebl": 947.5,
+      "mean_los": 34.94
+    },
+    {
+      "region": "other",
+      "opname": "Excision",
+      "case_count": 228,
+      "mort_rate": 0.0,
+      "mean_ebl": 335.14,
+      "mean_los": 6.06
+    },
+    {
+      "region": "other",
+      "opname": "Exploration",
+      "case_count": 5,
+      "mort_rate": 0.0,
+      "mean_ebl": 83.33,
+      "mean_los": 13.8
+    },
+    {
+      "region": "other",
+      "opname": "Exploration of common bile duct",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 300.0,
+      "mean_los": 9.0
+    },
+    {
+      "region": "other",
+      "opname": "Exploration of wound",
+      "case_count": 6,
+      "mort_rate": 0.17,
+      "mean_ebl": 125.0,
+      "mean_los": 84.17
+    },
+    {
+      "region": "other",
+      "opname": "Exploratory thoracotomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 6500.0,
+      "mean_los": 6.0
+    },
+    {
+      "region": "other",
+      "opname": "Extended cholecystectomy",
+      "case_count": 17,
+      "mort_rate": 0.0,
+      "mean_ebl": 1082.35,
+      "mean_los": 11.18
+    },
+    {
+      "region": "other",
+      "opname": "Extended hemicolectomy",
+      "case_count": 23,
+      "mort_rate": 0.0,
+      "mean_ebl": 193.33,
+      "mean_los": 10.39
+    },
+    {
+      "region": "other",
+      "opname": "Extended hemihepatectomy",
+      "case_count": 26,
+      "mort_rate": 0.0,
+      "mean_ebl": 533.0,
+      "mean_los": 16.5
+    },
+    {
+      "region": "other",
+      "opname": "Extended hysterectomy",
+      "case_count": 10,
+      "mort_rate": 0.0,
+      "mean_ebl": 265.71,
+      "mean_los": 5.8
+    },
+    {
+      "region": "other",
+      "opname": "Extended total gastrectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 80.0,
+      "mean_los": 13.0
+    },
+    {
+      "region": "other",
+      "opname": "Feeding jejunostomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 14.5
+    },
+    {
+      "region": "other",
+      "opname": "Femoro-femoral bypass",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 200.0,
+      "mean_los": 10.0
+    },
+    {
+      "region": "other",
+      "opname": "Femoro-popliteal bypass",
+      "case_count": 3,
+      "mort_rate": 0.0,
+      "mean_ebl": 666.67,
+      "mean_los": 9.33
+    },
+    {
+      "region": "other",
+      "opname": "Fistulectomy",
+      "case_count": 28,
+      "mort_rate": 0.0,
+      "mean_ebl": 60.3,
+      "mean_los": 3.71
+    },
+    {
+      "region": "other",
+      "opname": "Fundoplication",
+      "case_count": 3,
+      "mort_rate": 0.0,
+      "mean_ebl": 80.0,
+      "mean_los": 9.33
+    },
+    {
+      "region": "other",
+      "opname": "Gastric bypass",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 100.0,
+      "mean_los": 10.0
+    },
+    {
+      "region": "other",
+      "opname": "Gastric wedge resection",
+      "case_count": 42,
+      "mort_rate": 0.0,
+      "mean_ebl": 87.06,
+      "mean_los": 7.79
+    },
+    {
+      "region": "other",
+      "opname": "Gastrojejunostomy",
+      "case_count": 11,
+      "mort_rate": 0.0,
+      "mean_ebl": 158.75,
+      "mean_los": 22.45
+    },
+    {
+      "region": "other",
+      "opname": "Gastrostomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 38.0
+    },
+    {
+      "region": "other",
+      "opname": "Hartmann procedure",
+      "case_count": 28,
+      "mort_rate": 0.0,
+      "mean_ebl": 498.75,
+      "mean_los": 12.79
+    },
+    {
+      "region": "other",
+      "opname": "Hemicolectomy",
+      "case_count": 193,
+      "mort_rate": 0.02,
+      "mean_ebl": 159.9,
+      "mean_los": 10.56
+    },
+    {
+      "region": "other",
+      "opname": "Hemorrhoidectomy",
+      "case_count": 13,
+      "mort_rate": 0.0,
+      "mean_ebl": 40.0,
+      "mean_los": 2.92
+    },
+    {
+      "region": "other",
+      "opname": "Hepatic hilar resection",
+      "case_count": 8,
+      "mort_rate": 0.0,
+      "mean_ebl": 370.0,
+      "mean_los": 26.0
+    },
+    {
+      "region": "other",
+      "opname": "Hepaticojejunostomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 275.0,
+      "mean_los": 9.5
+    },
+    {
+      "region": "other",
+      "opname": "Hepatopancreaticoduodenectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 400.0,
+      "mean_los": 22.0
+    },
+    {
+      "region": "other",
+      "opname": "Hysterectomy",
+      "case_count": 24,
+      "mort_rate": 0.0,
+      "mean_ebl": 215.91,
+      "mean_los": 4.21
+    },
+    {
+      "region": "other",
+      "opname": "Ileocecectomy",
+      "case_count": 11,
+      "mort_rate": 0.0,
+      "mean_ebl": 177.5,
+      "mean_los": 8.64
+    },
+    {
+      "region": "other",
+      "opname": "Ileocolectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 200.0,
+      "mean_los": 7.0
+    },
+    {
+      "region": "other",
+      "opname": "Ileostomy",
+      "case_count": 16,
+      "mort_rate": 0.06,
+      "mean_ebl": 354.17,
+      "mean_los": 25.0
+    },
+    {
+      "region": "other",
+      "opname": "Ilioiliac bypass",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 330.0,
+      "mean_los": 8.0
+    },
+    {
+      "region": "other",
+      "opname": "Incision and drainage",
+      "case_count": 22,
+      "mort_rate": 0.0,
+      "mean_ebl": 166.88,
+      "mean_los": 18.91
+    },
+    {
+      "region": "other",
+      "opname": "Incision of rectal stricture",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 5.0
+    },
+    {
+      "region": "other",
+      "opname": "Inguinal hernia",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 2.0
+    },
+    {
+      "region": "other",
+      "opname": "Inguinal lymph node dissection",
+      "case_count": 7,
+      "mort_rate": 0.0,
+      "mean_ebl": 57.5,
+      "mean_los": 9.71
+    },
+    {
+      "region": "other",
+      "opname": "Insertion of continuous ambulatory peritoneal dialysis catheter",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 3.0
+    },
+    {
+      "region": "other",
+      "opname": "Insertion of permanent catheter",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 200.0,
+      "mean_los": 1.0
+    },
+    {
+      "region": "other",
+      "opname": "Internal mammary lymph node dissection",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 20.0,
+      "mean_los": 2.0
+    },
+    {
+      "region": "other",
+      "opname": "Intra-abdominal arterial bypass graft",
+      "case_count": 1,
+      "mort_rate": 1.0,
+      "mean_ebl": 300.0,
+      "mean_los": 3.0
+    },
+    {
+      "region": "other",
+      "opname": "Ivor Lewis operation",
+      "case_count": 4,
+      "mort_rate": 0.0,
+      "mean_ebl": 387.5,
+      "mean_los": 13.25
+    },
+    {
+      "region": "other",
+      "opname": "Ligation and stripping",
+      "case_count": 120,
+      "mort_rate": 0.0,
+      "mean_ebl": 71.67,
+      "mean_los": 2.08
+    },
+    {
+      "region": "other",
+      "opname": "Liver bisegmentectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 400.0,
+      "mean_los": 11.0
+    },
+    {
+      "region": "other",
+      "opname": "Liver sectionectomy",
+      "case_count": 40,
+      "mort_rate": 0.0,
+      "mean_ebl": 375.64,
+      "mean_los": 11.3
+    },
+    {
+      "region": "other",
+      "opname": "Liver tumorectomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 500.0,
+      "mean_los": 8.5
+    },
+    {
+      "region": "other",
+      "opname": "Lung bilobectomy",
+      "case_count": 14,
+      "mort_rate": 0.07,
+      "mean_ebl": 233.0,
+      "mean_los": 11.43
+    },
+    {
+      "region": "other",
+      "opname": "Lung sgmentectomy",
+      "case_count": 61,
+      "mort_rate": 0.0,
+      "mean_ebl": 114.1,
+      "mean_los": 7.26
+    },
+    {
+      "region": "other",
+      "opname": "Lung transplantation",
+      "case_count": 7,
+      "mort_rate": 0.0,
+      "mean_ebl": 1800.0,
+      "mean_los": 77.43
+    },
+    {
+      "region": "other",
+      "opname": "Macroplastique injection",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 2.0
+    },
+    {
+      "region": "other",
+      "opname": "Marsupialization",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 250.0,
+      "mean_los": 11.0
+    },
+    {
+      "region": "other",
+      "opname": "Mastectomy",
+      "case_count": 6,
+      "mort_rate": 0.17,
+      "mean_ebl": 150.0,
+      "mean_los": 9.83
+    },
+    {
+      "region": "other",
+      "opname": "McDonald operation",
+      "case_count": 4,
+      "mort_rate": 0.0,
+      "mean_ebl": 135.0,
+      "mean_los": 21.0
+    },
+    {
+      "region": "other",
+      "opname": "Median pancreatectomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 75.0,
+      "mean_los": 8.5
+    },
+    {
+      "region": "other",
+      "opname": "Mediastinal lymph node dissection",
+      "case_count": 10,
+      "mort_rate": 0.0,
+      "mean_ebl": 86.67,
+      "mean_los": 4.2
+    },
+    {
+      "region": "other",
+      "opname": "Modified Shirodkar operation",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 16.5
+    },
+    {
+      "region": "other",
+      "opname": "Modified radical hysterectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 450.0,
+      "mean_los": 14.0
+    },
+    {
+      "region": "other",
+      "opname": "Modified radical neck dissection",
+      "case_count": 9,
+      "mort_rate": 0.0,
+      "mean_ebl": 42.5,
+      "mean_los": 4.33
+    },
+    {
+      "region": "other",
+      "opname": "Myomectomy",
+      "case_count": 12,
+      "mort_rate": 0.0,
+      "mean_ebl": 322.22,
+      "mean_los": 4.0
+    },
+    {
+      "region": "other",
+      "opname": "Nephrectomy",
+      "case_count": 18,
+      "mort_rate": 0.06,
+      "mean_ebl": 526.67,
+      "mean_los": 8.28
+    },
+    {
+      "region": "other",
+      "opname": "Nephroureterectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 8.0
+    },
+    {
+      "region": "other",
+      "opname": "Oophorectomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 4.5
+    },
+    {
+      "region": "other",
+      "opname": "Orchiectomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 350.0,
+      "mean_los": 3.0
+    },
+    {
+      "region": "other",
+      "opname": "Ovarian cancer staging operation",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 600.0,
+      "mean_los": 8.0
+    },
+    {
+      "region": "other",
+      "opname": "Ovarian cystectomy",
+      "case_count": 25,
+      "mort_rate": 0.0,
+      "mean_ebl": 176.19,
+      "mean_los": 8.36
+    },
+    {
+      "region": "other",
+      "opname": "Pancreas transplantation",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 250.0,
+      "mean_los": 21.0
+    },
+    {
+      "region": "other",
+      "opname": "Pancreatic cystojejunostomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 100.0,
+      "mean_los": 8.0
+    },
+    {
+      "region": "other",
+      "opname": "Pancreaticoduodenectomy",
+      "case_count": 19,
+      "mort_rate": 0.0,
+      "mean_ebl": 422.11,
+      "mean_los": 18.63
+    },
+    {
+      "region": "other",
+      "opname": "Pancreaticojejunostomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 150.0,
+      "mean_los": 20.0
+    },
+    {
+      "region": "other",
+      "opname": "Pancreatosplenectomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 1050.0,
+      "mean_los": 9.0
+    },
+    {
+      "region": "other",
+      "opname": "Paraaortic lymph node dissection",
+      "case_count": 6,
+      "mort_rate": 0.0,
+      "mean_ebl": 187.5,
+      "mean_los": 7.5
+    },
+    {
+      "region": "other",
+      "opname": "Parathyroidectomy",
+      "case_count": 14,
+      "mort_rate": 0.0,
+      "mean_ebl": 35.0,
+      "mean_los": 2.36
+    },
+    {
+      "region": "other",
+      "opname": "Partial cystectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 100.0,
+      "mean_los": 5.0
+    },
+    {
+      "region": "other",
+      "opname": "Partial gastrectomy",
+      "case_count": 12,
+      "mort_rate": 0.0,
+      "mean_ebl": 297.0,
+      "mean_los": 9.42
+    },
+    {
+      "region": "other",
+      "opname": "Partial pancreatectomy",
+      "case_count": 19,
+      "mort_rate": 0.0,
+      "mean_ebl": 618.82,
+      "mean_los": 13.26
+    },
+    {
+      "region": "other",
+      "opname": "Pelvic tumorectomy",
+      "case_count": 11,
+      "mort_rate": 0.0,
+      "mean_ebl": 363.0,
+      "mean_los": 9.36
+    },
+    {
+      "region": "other",
+      "opname": "Percutaneous biopsy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 20.0
+    },
+    {
+      "region": "other",
+      "opname": "Pericardial window operation",
+      "case_count": 3,
+      "mort_rate": 0.33,
+      "mean_ebl": null,
+      "mean_los": 32.0
+    },
+    {
+      "region": "other",
+      "opname": "Peritoneal mass excision",
+      "case_count": 7,
+      "mort_rate": 0.0,
+      "mean_ebl": 155.0,
+      "mean_los": 8.14
+    },
+    {
+      "region": "other",
+      "opname": "Pleurectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 150.0,
+      "mean_los": 7.0
+    },
+    {
+      "region": "other",
+      "opname": "Pleurodesis",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 5.0
+    },
+    {
+      "region": "other",
+      "opname": "Pleuroscopy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 4.0
+    },
+    {
+      "region": "other",
+      "opname": "Plication",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 3.5
+    },
+    {
+      "region": "other",
+      "opname": "Pneumonectomy",
+      "case_count": 10,
+      "mort_rate": 0.1,
+      "mean_ebl": 662.5,
+      "mean_los": 11.7
+    },
+    {
+      "region": "other",
+      "opname": "Proximal gastrectomy",
+      "case_count": 10,
+      "mort_rate": 0.0,
+      "mean_ebl": 230.0,
+      "mean_los": 10.6
+    },
+    {
+      "region": "other",
+      "opname": "Pyeloplasty",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 4.5
+    },
+    {
+      "region": "other",
+      "opname": "Pylorus preserving gastrectomy",
+      "case_count": 68,
+      "mort_rate": 0.0,
+      "mean_ebl": 131.11,
+      "mean_los": 12.56
+    },
+    {
+      "region": "other",
+      "opname": "Radical cholecystectomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 350.0,
+      "mean_los": 9.5
+    },
+    {
+      "region": "other",
+      "opname": "Radical cystectomy",
+      "case_count": 6,
+      "mort_rate": 0.0,
+      "mean_ebl": 491.67,
+      "mean_los": 43.0
+    },
+    {
+      "region": "other",
+      "opname": "Radical excision of cervical lymph nodes",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 5.0
+    },
+    {
+      "region": "other",
+      "opname": "Radical excision of iliac lymph nodes",
+      "case_count": 4,
+      "mort_rate": 0.0,
+      "mean_ebl": 175.0,
+      "mean_los": 13.0
+    },
+    {
+      "region": "other",
+      "opname": "Radical hysterectomy",
+      "case_count": 40,
+      "mort_rate": 0.0,
+      "mean_ebl": 129.69,
+      "mean_los": 5.38
+    },
+    {
+      "region": "other",
+      "opname": "Radical mastectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 120.0,
+      "mean_los": 8.0
+    },
+    {
+      "region": "other",
+      "opname": "Radical parametrectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 1300.0,
+      "mean_los": 11.0
+    },
+    {
+      "region": "other",
+      "opname": "Radical trachelectomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 200.0,
+      "mean_los": 9.0
+    },
+    {
+      "region": "other",
+      "opname": "Rectal prolapse operation",
+      "case_count": 4,
+      "mort_rate": 0.0,
+      "mean_ebl": 87.5,
+      "mean_los": 7.75
+    },
+    {
+      "region": "other",
+      "opname": "Regional lymph node dissection",
+      "case_count": 3,
+      "mort_rate": 0.0,
+      "mean_ebl": 116.67,
+      "mean_los": 7.33
+    },
+    {
+      "region": "other",
+      "opname": "Remnant total gastrectomy",
+      "case_count": 12,
+      "mort_rate": 0.0,
+      "mean_ebl": 276.25,
+      "mean_los": 13.75
+    },
+    {
+      "region": "other",
+      "opname": "Removal of Hickman catheter",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 15.0
+    },
+    {
+      "region": "other",
+      "opname": "Removal of complicated graft",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 400.0,
+      "mean_los": 27.0
+    },
+    {
+      "region": "other",
+      "opname": "Removal of continuous ambulatory peritoneal dialysis catheter",
+      "case_count": 9,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 6.56
+    },
+    {
+      "region": "other",
+      "opname": "Removal of foreign body",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 40.0
+    },
+    {
+      "region": "other",
+      "opname": "Removal of permanent catheter",
+      "case_count": 4,
+      "mort_rate": 0.0,
+      "mean_ebl": 10.0,
+      "mean_los": 16.75
+    },
+    {
+      "region": "other",
+      "opname": "Removal of staples",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 3.0
+    },
+    {
+      "region": "other",
+      "opname": "Reposition of continuous ambulatory peritoneal dialysis catheter",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 4.0
+    },
+    {
+      "region": "other",
+      "opname": "Resection of chest wall with reconstruction",
+      "case_count": 5,
+      "mort_rate": 0.0,
+      "mean_ebl": 250.0,
+      "mean_los": 31.2
+    },
+    {
+      "region": "other",
+      "opname": "Resection of inferior vena cava",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 2975.0,
+      "mean_los": 19.5
+    },
+    {
+      "region": "other",
+      "opname": "Resection of intestine",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 6.0
+    },
+    {
+      "region": "other",
+      "opname": "Resection of lower limb artery",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 250.0,
+      "mean_los": 13.0
+    },
+    {
+      "region": "other",
+      "opname": "Resection of popliteal artery",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 1300.0,
+      "mean_los": 17.5
+    },
+    {
+      "region": "other",
+      "opname": "Resection of rib",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 300.0,
+      "mean_los": 14.0
+    },
+    {
+      "region": "other",
+      "opname": "Resection of sternum",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 300.0,
+      "mean_los": 8.0
+    },
+    {
+      "region": "other",
+      "opname": "Revision of arteriovenous fistula",
+      "case_count": 4,
+      "mort_rate": 0.0,
+      "mean_ebl": 300.0,
+      "mean_los": 8.5
+    },
+    {
+      "region": "other",
+      "opname": "Revision of small intestine anastomosis",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 250.0,
+      "mean_los": 27.0
+    },
+    {
+      "region": "other",
+      "opname": "Rigid bronchoscopic excision",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 4.0
+    },
+    {
+      "region": "other",
+      "opname": "Rigid bronchoscopy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 229.0
+    },
+    {
+      "region": "other",
+      "opname": "Rrectocele repair",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 20.0,
+      "mean_los": 4.5
+    },
+    {
+      "region": "other",
+      "opname": "Salpingectomy",
+      "case_count": 3,
+      "mort_rate": 0.0,
+      "mean_ebl": 20.0,
+      "mean_los": 3.33
+    },
+    {
+      "region": "other",
+      "opname": "Salpingo-oophorectomy",
+      "case_count": 28,
+      "mort_rate": 0.0,
+      "mean_ebl": 189.29,
+      "mean_los": 4.07
+    },
+    {
+      "region": "other",
+      "opname": "Segmental resection of bile duct",
+      "case_count": 6,
+      "mort_rate": 0.0,
+      "mean_ebl": 900.0,
+      "mean_los": 23.5
+    },
+    {
+      "region": "other",
+      "opname": "Segmental resection of colon",
+      "case_count": 3,
+      "mort_rate": 0.0,
+      "mean_ebl": 216.67,
+      "mean_los": 14.0
+    },
+    {
+      "region": "other",
+      "opname": "Selective neck dissection",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 4.0
+    },
+    {
+      "region": "other",
+      "opname": "Sentinel lymph node mapping",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 450.0,
+      "mean_los": 10.0
+    },
+    {
+      "region": "other",
+      "opname": "Simultaneous pancreas-kidney transplantation",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 250.0,
+      "mean_los": 38.5
+    },
+    {
+      "region": "other",
+      "opname": "Sleeve lobectomy",
+      "case_count": 7,
+      "mort_rate": 0.14,
+      "mean_ebl": 296.67,
+      "mean_los": 12.86
+    },
+    {
+      "region": "other",
+      "opname": "Small bowel segmental resection",
+      "case_count": 20,
+      "mort_rate": 0.0,
+      "mean_ebl": 200.0,
+      "mean_los": 11.9
+    },
+    {
+      "region": "other",
+      "opname": "Sphincteroplasty",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 2.5
+    },
+    {
+      "region": "other",
+      "opname": "Sphincterotomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 2.0
+    },
+    {
+      "region": "other",
+      "opname": "Spleen preserving distal pancreatectomy",
+      "case_count": 13,
+      "mort_rate": 0.0,
+      "mean_ebl": 232.31,
+      "mean_los": 9.46
+    },
+    {
+      "region": "other",
+      "opname": "Splenectomy",
+      "case_count": 18,
+      "mort_rate": 0.0,
+      "mean_ebl": 586.67,
+      "mean_los": 14.89
+    },
+    {
+      "region": "other",
+      "opname": "Staging laparotomy",
+      "case_count": 5,
+      "mort_rate": 0.0,
+      "mean_ebl": 650.0,
+      "mean_los": 11.0
+    },
+    {
+      "region": "other",
+      "opname": "Staging operation",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 5.0
+    },
+    {
+      "region": "other",
+      "opname": "Sternal fixation",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 83.0
+    },
+    {
+      "region": "other",
+      "opname": "Subtotal colectomy",
+      "case_count": 4,
+      "mort_rate": 0.0,
+      "mean_ebl": 333.33,
+      "mean_los": 12.0
+    },
+    {
+      "region": "other",
+      "opname": "Subtotal gastrectomy",
+      "case_count": 40,
+      "mort_rate": 0.0,
+      "mean_ebl": 312.35,
+      "mean_los": 15.38
+    },
+    {
+      "region": "other",
+      "opname": "Subtotal pancreatectomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 75.0,
+      "mean_los": 10.0
+    },
+    {
+      "region": "other",
+      "opname": "Subtotal parathyroidectomy",
+      "case_count": 6,
+      "mort_rate": 0.0,
+      "mean_ebl": 40.0,
+      "mean_los": 6.83
+    },
+    {
+      "region": "other",
+      "opname": "Thoracic sympathectomy",
+      "case_count": 9,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 2.44
+    },
+    {
+      "region": "other",
+      "opname": "Thoracoplasty",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 1400.0,
+      "mean_los": 23.0
+    },
+    {
+      "region": "other",
+      "opname": "Thymectomy",
+      "case_count": 44,
+      "mort_rate": 0.0,
+      "mean_ebl": 289.11,
+      "mean_los": 6.73
+    },
+    {
+      "region": "other",
+      "opname": "Thyroglossal duct cyst excision",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 3.0
+    },
+    {
+      "region": "other",
+      "opname": "Thyroid isthmectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 30.0,
+      "mean_los": 4.0
+    },
+    {
+      "region": "other",
+      "opname": "Thyroidectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 4.0
+    },
+    {
+      "region": "other",
+      "opname": "Total colectomy",
+      "case_count": 10,
+      "mort_rate": 0.0,
+      "mean_ebl": 250.0,
+      "mean_los": 16.4
+    },
+    {
+      "region": "other",
+      "opname": "Total esophagectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 250.0,
+      "mean_los": 30.0
+    },
+    {
+      "region": "other",
+      "opname": "Total hysterectomy",
+      "case_count": 4,
+      "mort_rate": 0.0,
+      "mean_ebl": 212.5,
+      "mean_los": 7.0
+    },
+    {
+      "region": "other",
+      "opname": "Total hysterectomy ",
+      "case_count": 6,
+      "mort_rate": 0.0,
+      "mean_ebl": 188.33,
+      "mean_los": 6.67
+    },
+    {
+      "region": "other",
+      "opname": "Total mastectomy",
+      "case_count": 32,
+      "mort_rate": 0.0,
+      "mean_ebl": 86.25,
+      "mean_los": 7.47
+    },
+    {
+      "region": "other",
+      "opname": "Total pancreatectomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 377.5,
+      "mean_los": 14.5
+    },
+    {
+      "region": "other",
+      "opname": "Total proctocolectomy",
+      "case_count": 5,
+      "mort_rate": 0.0,
+      "mean_ebl": 162.5,
+      "mean_los": 8.0
+    },
+    {
+      "region": "other",
+      "opname": "Transanal endoscopic microsurgery",
+      "case_count": 13,
+      "mort_rate": 0.0,
+      "mean_ebl": 60.0,
+      "mean_los": 5.62
+    },
+    {
+      "region": "other",
+      "opname": "Transanal excision",
+      "case_count": 36,
+      "mort_rate": 0.0,
+      "mean_ebl": 154.29,
+      "mean_los": 4.14
+    },
+    {
+      "region": "other",
+      "opname": "Transduodenal ampullectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 10.0
+    },
+    {
+      "region": "other",
+      "opname": "Transplantation of gracilis muscle",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 40.0,
+      "mean_los": 4.0
+    },
+    {
+      "region": "other",
+      "opname": "Transposition of basilic vein for arteriovenous fistula",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 100.0,
+      "mean_los": 35.0
+    },
+    {
+      "region": "other",
+      "opname": "Transurethral resection of bladder tumor",
+      "case_count": 32,
+      "mort_rate": 0.0,
+      "mean_ebl": 86.67,
+      "mean_los": 2.25
+    },
+    {
+      "region": "other",
+      "opname": "Transverse colectomy",
+      "case_count": 3,
+      "mort_rate": 0.0,
+      "mean_ebl": 100.0,
+      "mean_los": 7.0
+    },
+    {
+      "region": "other",
+      "opname": "Transverse loop colostomy",
+      "case_count": 3,
+      "mort_rate": 0.0,
+      "mean_ebl": 40.0,
+      "mean_los": 8.67
+    },
+    {
+      "region": "other",
+      "opname": "Ultralow anterior resection",
+      "case_count": 17,
+      "mort_rate": 0.0,
+      "mean_ebl": 358.57,
+      "mean_los": 10.53
+    },
+    {
+      "region": "other",
+      "opname": "Varicocelectomy",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": null,
+      "mean_los": 2.0
+    },
+    {
+      "region": "other",
+      "opname": "Vascular bypass",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 125.0,
+      "mean_los": 17.0
+    },
+    {
+      "region": "other",
+      "opname": "Vascular repair",
+      "case_count": 2,
+      "mort_rate": 0.5,
+      "mean_ebl": 200.0,
+      "mean_los": 42.0
+    },
+    {
+      "region": "other",
+      "opname": "Vessel graft",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 300.0,
+      "mean_los": 15.0
+    },
+    {
+      "region": "other",
+      "opname": "Wide excision",
+      "case_count": 30,
+      "mort_rate": 0.0,
+      "mean_ebl": 55.0,
+      "mean_los": 4.1
+    },
+    {
+      "region": "other",
+      "opname": "Wound revision",
+      "case_count": 5,
+      "mort_rate": 0.0,
+      "mean_ebl": 100.0,
+      "mean_los": 13.6
+    },
+    {
+      "region": "other",
+      "opname": "anterior resection",
+      "case_count": 1,
+      "mort_rate": 0.0,
+      "mean_ebl": 50.0,
+      "mean_los": 8.0
+    },
+    {
+      "region": "other",
+      "opname": "subtotal colectomy",
+      "case_count": 12,
+      "mort_rate": 0.0,
+      "mean_ebl": 419.0,
+      "mean_los": 10.33
+    },
+    {
+      "region": "pelvis",
+      "opname": "Radical prostatectomy",
+      "case_count": 58,
+      "mort_rate": 0.02,
+      "mean_ebl": 425.44,
+      "mean_los": 5.03
+    },
+    {
+      "region": "thorax",
+      "opname": "Breast-conserving surgery",
+      "case_count": 295,
+      "mort_rate": 0.0,
+      "mean_ebl": 65.2,
+      "mean_los": 6.2
+    },
+    {
+      "region": "thorax",
+      "opname": "Lung lobectomy",
+      "case_count": 332,
+      "mort_rate": 0.01,
+      "mean_ebl": 203.09,
+      "mean_los": 7.94
+    },
+    {
+      "region": "thorax",
+      "opname": "Lung segmentectomy",
+      "case_count": 2,
+      "mort_rate": 0.0,
+      "mean_ebl": 175.0,
+      "mean_los": 4.5
+    },
+    {
+      "region": "thorax",
+      "opname": "Lung wedge resection",
+      "case_count": 236,
+      "mort_rate": 0.0,
+      "mean_ebl": 117.84,
+      "mean_los": 7.83
+    },
+    {
+      "region": "thorax",
+      "opname": "Simple mastectomy",
+      "case_count": 66,
+      "mort_rate": 0.0,
+      "mean_ebl": 108.97,
+      "mean_los": 8.29
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Surgery Atlas · Interactive Story</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+  <h1>Surgery Atlas</h1>
+  <p class="subtitle">Hover a region · Click for the top surgeries</p>
+
+  <section id="layout">
+    <!-- ------------- BODY MAP ------------- -->
+    <main id="chart">
+        <svg id="body-map" viewBox="0 0 494 610"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+        <image xlink:href="images/body_outline.png"
+                x="0" y="0" width="494" height="610"/>
+    
+        <!-- ─── head / neck ─── -->
+        <g id="head_neck" class="region">
+            <circle cx="247" cy="100" r="60"></circle>
+            <rect  x="217" y="160" width="60" height="40"></rect>
+        </g>
+    
+        <!-- ─── thorax (shoulders → diaphragm) ─── -->
+        <g id="thorax" class="region">
+            <path d="
+            M175 170
+            Q247 120 319 170
+            L319 290
+            Q247 330 175 290 Z"/>
+        </g>
+    
+        <!-- abdomen (20 px up) -->
+        <g id="abdomen" class="region">
+            <path d="
+            M185 255
+            Q247 290 309 255
+            L309 325
+            Q247 355 185 325 Z"/>
+        </g>
+        
+        <!-- pelvis (20 px up) -->
+        <g id="pelvis" class="region">
+            <path d="
+            M205 330
+            Q247 355 289 330
+            L289 380
+            Q247 405 205 380 Z"/>
+        </g>
+        </svg>
+    
+        <div id="tooltip" hidden></div>
+    </main>
+  
+
+    <!-- ------------- SIDE PANEL ------------- -->
+    <aside id="viz">
+      <h2 id="viz-title" hidden></h2>
+      <svg id="bar-chart"></svg>
+      <p id="viz-hint" hidden>Click a bar to lock highlight</p>
+    </aside>
+  </section>
+</body>
+</html>

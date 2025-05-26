@@ -1,0 +1,45 @@
+/* ========= GLOBAL ========= */
+*{box-sizing:border-box}
+body{
+  font-family:system-ui,sans-serif;
+  margin:0;
+  display:grid;
+  place-items:center;
+  background:#f3f5f8;
+  padding:1rem;
+  color:#222;
+  text-align:center;
+}
+h1{margin:.3rem 0 .2rem;font-size:2.2rem}
+.subtitle{margin:.1rem 0 1.1rem;font-size:.9rem;color:#444}
+
+/* ========= LAYOUT ========= */
+#layout{display:flex;flex-direction:column;gap:1.4rem;align-items:center}
+@media(min-width:820px){#layout{flex-direction:row;justify-content:center}}
+
+#chart{position:relative}
+#body-map{width:38vmin;max-width:360px}
+
+/* ========= MAP REGIONS ========= */
+.region path,.region circle{
+  fill:transparent;cursor:pointer;pointer-events:all;
+}
+.region--highlight{stroke:#222;stroke-width:2}
+.region--selected {stroke:#222;stroke-width:3}
+
+/* ========= TOOLTIP ========= */
+#tooltip{
+  position:absolute;
+  padding:.45rem .7rem;
+  font-size:.8rem;
+  background:rgba(20,20,20,.93);
+  color:#fff;border-radius:4px;pointer-events:none;
+  transform:translate(-50%,-120%);
+  white-space:nowrap;z-index:10;
+}
+
+/* ========= SIDE PANEL ========= */
+#viz{width:340px;min-height:300px;padding:0 10px}
+#viz-title{margin:.2rem 0;font-size:1.1rem}
+#bar-chart{width:100%;height:260px}
+#viz-hint{font-size:.7rem;color:#666;margin:.3rem 0 0}
