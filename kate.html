@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Surgery Dashboard</title>
+  <link rel="stylesheet" href="kate.css" />
+</head>
+<body>
+
+<h1>What to Tell Your Patient?</h1>
+<h4>Input the stats of your incoming surgical patient</h4>
+
+<!-- CONTROLS ROW -->
+<div class="controls">
+
+  <!-- AGE -->
+  <div class="slider-container">
+    <label for="ageSlider">
+      Age: <span id="ageValue" class="slider-value">50</span>
+    </label>
+    <input type="range" id="ageSlider" min="0" max="100" value="50" />
+    <div class="slider-tooltip" id="ageSliderTooltip"></div>
+  </div>
+
+  <!-- HEIGHT -->
+  <div class="slider-container">
+    <label for="heightSlider">
+      Height (cm): <span id="heightValue" class="slider-value">155</span>
+    </label>
+    <input type="range" id="heightSlider" min="100" max="210" value="155" />
+    <div class="slider-tooltip" id="heightSliderTooltip"></div>
+  </div>
+
+  <!-- WEIGHT -->
+  <div class="slider-container">
+    <label for="weightSlider">
+      Weight (kg): <span id="weightValue" class="slider-value">90</span>
+    </label>
+    <input type="range" id="weightSlider" min="30" max="150" value="90" />
+    <div class="slider-tooltip" id="weightSliderTooltip"></div>
+  </div>
+
+  <!-- GENDER SELECT -->
+  <div class="select-container">
+    <label for="sexFilter">Gender:</label>
+    <select id="sexFilter">
+      <option value="all">All</option>
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+    </select>
+  </div>
+</div>
+
+<!-- SUMMARY & CHART ROW -->
+<div class="summary-chart-row">
+  <div class="card summary">
+    <h2>Surgery Overview</h2>
+    <div id="summary">
+    </div>
+  </div>
+
+  <div class="card chart-container">
+    <svg
+      id="chart"
+      width="900"
+      height="600"
+      viewBox="0 0 900 600"
+      preserveAspectRatio="xMidYMid meet">
+      <!-- D3 will draw into this -->
+    </svg>
+  </div>
+</div>
+
+
+<!-- Tooltips for sliders from chart.js -->
+<div id="ageSliderTooltip" class="tooltip"></div>
+<div id="heightSliderTooltip" class="tooltip"></div>
+<div id="weightSliderTooltip" class="tooltip"></div>
+
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="kate.js"></script>
+</body>
+</html>
