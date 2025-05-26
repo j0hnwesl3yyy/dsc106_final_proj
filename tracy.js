@@ -9,30 +9,14 @@ fetch("tracy.json")
       { id: "asa", label: "ASA Score" },
       { id: "bmi", label: "BMI" },
       { id: "preop_hb", label: "Pre-op Hemoglobin" },
-      { id: "preop_plt", label: "Pre-op Platelet Count" },
-      { id: "preop_pt", label: "Pre-op PT" },
-      { id: "preop_aptt", label: "Pre-op aPTT" },
+      { id: "intraop_ebl", label: "Intra-op Blood Loss (mL)" },
+      { id: "preop_cr", label: "Pre-op Creatinine" },
+      { id: "preop_alb", label: "Pre-op Albumin" },
       { id: "preop_na", label: "Pre-op Sodium" },
       { id: "preop_k", label: "Pre-op Potassium" },
       { id: "preop_gluc", label: "Pre-op Glucose" },
-      { id: "preop_alb", label: "Pre-op Albumin" },
-      { id: "preop_ast", label: "Pre-op AST" },
-      { id: "preop_alt", label: "Pre-op ALT" },
-      { id: "preop_bun", label: "Pre-op BUN" },
-      { id: "preop_cr", label: "Pre-op Creatinine" },
-      { id: "preop_ph", label: "Pre-op pH" },
-      { id: "preop_hco3", label: "Pre-op HCO₃⁻" },
-      { id: "preop_be", label: "Pre-op Base Excess" },
-      { id: "preop_pao2", label: "Pre-op PaO₂" },
-      { id: "preop_paco2", label: "Pre-op PaCO₂" },
-      { id: "preop_sao2", label: "Pre-op SaO₂" },
-      { id: "intraop_ebl", label: "Intra-op Blood Loss (mL)" },
-      { id: "intraop_uo", label: "Intra-op Urine Output (mL)" },
       { id: "intraop_rbc", label: "Intra-op RBC Transfusion (mL)" },
-      { id: "intraop_ffp", label: "Intra-op FFP (mL)" },
-      { id: "intraop_crystalloid", label: "Intra-op Crystalloid (mL)" },
-      { id: "intraop_colloid", label: "Intra-op Colloid (mL)" },
-      { id: "intraop_ppf", label: "Intra-op PPF (mL)" }
+      { id: "intraop_uo", label: "Intra-op Urine Output (mL)" }
     ];
 
     let currentMetric = metrics[0].id;
@@ -45,15 +29,16 @@ fetch("tracy.json")
         highlightedOutcome = null;
         highlightedRisk = null;
         selectedBox = null;
-        d3.select("#detailsBox").html(`<strong>Click a boxplot</strong> to see details here`);
+        d3.select("#detailsBox").html(`<strong>Click a boxplot</strong> or filter to see details`);
         updateOpacity();
-      }); 
-
+        updateDetailsBoxFromFilter();
+      });
 
     const selector = d3.select("#metricSelector")
       .on("change", function () {
         currentMetric = this.value;
         drawBoxPlot(currentMetric);
+        updateDetailsBoxFromFilter();
       });
 
     metrics.forEach(metric => {
@@ -66,7 +51,7 @@ fetch("tracy.json")
 
     function drawBoxPlot(variable) {
       selectedBox = null;
-      d3.select("#detailsBox").html(`<strong>Click a boxplot</strong> to see details here`);
+      d3.select("#detailsBox").html(`<strong>Click a boxplot</strong> or filter to see details`);
 
       const svg = d3.select("#plot");
       const width = 300;
@@ -98,17 +83,24 @@ fetch("tracy.json")
         .paddingInner(0.3)
         .paddingOuter(0.2);
 
-      const xAxis = svg.append("g")
+      svg.append("g")
         .attr("transform", `translate(0,${height - margin.bottom})`)
-        .call(d3.axisBottom(xScale));
-
-      xAxis.selectAll("text")
-        .attr("font-size", "12px")
+        .call(d3.axisBottom(xScale))
+        .selectAll("text")
         .style("cursor", "pointer")
+        .style("font-weight", "bold") // <- this bolds the labels
         .on("click", function (event, d) {
           highlightedRisk = highlightedRisk === d ? null : d;
           updateOpacity();
+          updateDetailsBoxFromFilter();
+        })
+        .on("mouseover", function () {
+          d3.select(this).style("fill", "#666");
+        })
+        .on("mouseout", function () {
+          d3.select(this).style("fill", "#000");
         });
+
 
       svg.append("g")
         .attr("transform", `translate(${margin.left},0)`)
@@ -147,69 +139,16 @@ fetch("tracy.json")
             .attr("stroke", "#333");
 
           g.append("rect")
-          .attr("x", cx - boxWidth / 2)
-          .attr("width", boxWidth)
-          .attr("y", yScale(stats.q3))
-          .attr("height", yScale(stats.q1) - yScale(stats.q3))
-          .attr("fill", color[outcome])
-          .attr("stroke", "#000")
-          .style("cursor", "pointer")
-          .on("mouseover", function () {
-            d3.select(this)
-              .attr("fill", d3.color(color[outcome]).brighter(0.7));
-          })
-          .on("mouseout", function () {
-            d3.select(this)
-              .attr("fill", color[outcome]);
-          })
-          .on("click", function () {
-            const boxKey = `${risk}-${outcome}-${variable}`;
-            if (selectedBox === boxKey) {
-              d3.select("#detailsBox").html(`<strong>Click a boxplot</strong> to see details here`);
-              selectedBox = null;
-            } else {
-                const opDurations = filtered.map(d => {
-                  const start = new Date(d.opstart);
-                  const end = new Date(d.opend);
-                  return (end - start) / 60000;
-                }).filter(v => !isNaN(v));
-                const medianDuration = d3.median(opDurations)?.toFixed(1);
-
-                const anestheticCounts = d3.rollup(
-                  filtered.filter(d => d.ane_type),
-                  v => v.length,
-                  d => d.ane_type
-                );
-                const commonAnes = Array.from(anestheticCounts.entries())
-                  .sort((a, b) => b[1] - a[1])
-                  .slice(0, 3)
-                  .map(([type]) => type)
-                  .join(", ");
-
-                const bloodLoss = filtered.map(d => +d.intraop_ebl).filter(v => !isNaN(v));
-                const medianEBL = d3.median(bloodLoss)?.toFixed(1);
-
-                const icuCount = filtered.filter(d => +d.icu_days > 0).length;
-                const icuPercent = ((icuCount / filtered.length) * 100).toFixed(1);
-
-                d3.select("#detailsBox").html(`
-                  <strong>${outcome}</strong><br>
-                  Risk: ${risk}<br><br>
-                  <table>
-                    <tr><td>Min:</td><td>${stats.min.toFixed(1)}</td></tr>
-                    <tr><td>Q1:</td><td>${stats.q1.toFixed(1)}</td></tr>
-                    <tr><td>Median:</td><td>${stats.median.toFixed(1)}</td></tr>
-                    <tr><td>Q3:</td><td>${stats.q3.toFixed(1)}</td></tr>
-                    <tr><td>Max:</td><td>${stats.max.toFixed(1)}</td></tr>
-                  </table><br>
-                  <strong>Additional Info:</strong><br>
-                  Median Surgery Duration: ${medianDuration} min<br>
-                  Common Anesthetics: ${commonAnes}<br>
-                  Median Blood Loss: ${medianEBL} mL<br>
-                  ICU Admission: ${icuPercent}% of patients
-                `);
-                selectedBox = boxKey;
-              }
+            .attr("x", cx - boxWidth / 2)
+            .attr("width", boxWidth)
+            .attr("y", yScale(stats.q3))
+            .attr("height", yScale(stats.q1) - yScale(stats.q3))
+            .attr("fill", color[outcome])
+            .attr("stroke", "#000")
+            // .style("cursor", "pointer")
+            .on("click", () => {
+              selectedBox = `${risk}-${outcome}-${variable}`;
+              updateDetailsBoxFromFilter();
             });
 
           g.append("line")
@@ -231,6 +170,13 @@ fetch("tracy.json")
           .on("click", () => {
             highlightedOutcome = highlightedOutcome === outcome ? null : outcome;
             updateOpacity();
+            updateDetailsBoxFromFilter();
+          })
+          .on("mouseover", function () {
+            d3.select(this).select("rect").attr("fill", d3.color(color[outcome]).brighter(1));
+          })
+          .on("mouseout", function () {
+            d3.select(this).select("rect").attr("fill", color[outcome]);
           });
 
         legendRow.append("rect")
@@ -248,6 +194,7 @@ fetch("tracy.json")
       });
 
       updateOpacity();
+      updateDetailsBoxFromFilter();
     }
 
     function updateOpacity() {
@@ -259,10 +206,72 @@ fetch("tracy.json")
           const outcomeMatch = !highlightedOutcome || highlightedOutcome === boxOutcome;
           return riskMatch && outcomeMatch ? 1 : 0.2;
         });
+    }
 
-      d3.selectAll(".x.axis text")
-        .transition().duration(200)
-        .style("opacity", r => !highlightedRisk || highlightedRisk === r ? 1 : 0.2);
+    function updateDetailsBoxFromFilter() {
+      let filtered = data;
+
+      if (highlightedRisk) {
+        filtered = filtered.filter(d => d.risk === highlightedRisk);
+      }
+      if (highlightedOutcome) {
+        filtered = filtered.filter(d => d.death_inhosp === (highlightedOutcome === "Died" ? 1 : 0));
+      }
+
+      if (!filtered.length) {
+        d3.select("#detailsBox").html(`<em>No data matching current filters.</em>`);
+        return;
+      }
+
+      const values = filtered.map(d => +d[currentMetric]).filter(v => !isNaN(v));
+      if (!values.length) {
+        d3.select("#detailsBox").html(`<em>No values for selected metric.</em>`);
+        return;
+      }
+
+      const stats = getBoxStats(values);
+
+      const opDurations = filtered.map(d => {
+        const start = new Date(d.opstart);
+        const end = new Date(d.opend);
+        return (end - start) / 60000;
+      }).filter(v => !isNaN(v));
+      const medianDuration = d3.median(opDurations)?.toFixed(1);
+
+      const anestheticCounts = d3.rollup(
+        filtered.filter(d => d.ane_type),
+        v => v.length,
+        d => d.ane_type
+      );
+      const commonAnes = Array.from(anestheticCounts.entries())
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 3)
+        .map(([type]) => type)
+        .join(", ");
+
+      const bloodLoss = filtered.map(d => +d.intraop_ebl).filter(v => !isNaN(v));
+      const medianEBL = d3.median(bloodLoss)?.toFixed(1);
+
+      const icuCount = filtered.filter(d => +d.icu_days > 0).length;
+      const icuPercent = ((icuCount / filtered.length) * 100).toFixed(1);
+
+      d3.select("#detailsBox").html(`
+        <strong>Filtered Stats:</strong><br>
+        Risk: ${highlightedRisk || "All"}<br>
+        Outcome: ${highlightedOutcome || "All"}<br><br>
+        <table>
+          <tr><td>Min:</td><td>${stats.min.toFixed(1)}</td></tr>
+          <tr><td>Q1:</td><td>${stats.q1.toFixed(1)}</td></tr>
+          <tr><td>Median:</td><td>${stats.median.toFixed(1)}</td></tr>
+          <tr><td>Q3:</td><td>${stats.q3.toFixed(1)}</td></tr>
+          <tr><td>Max:</td><td>${stats.max.toFixed(1)}</td></tr>
+        </table><br>
+        <strong>Additional Info:</strong><br>
+        Median Surgery Duration: ${medianDuration} min<br>
+        Common Anesthetics: ${commonAnes}<br>
+        Median Blood Loss: ${medianEBL} mL<br>
+        ICU Admission: ${icuPercent}% of patients
+      `);
     }
 
     function getBoxStats(values) {
