@@ -230,10 +230,11 @@ fetch("tracy.json")
       const stats = getBoxStats(values);
 
       const opDurations = filtered.map(d => {
-        const start = new Date(d.opstart);
-        const end = new Date(d.opend);
-        return (end - start) / 60000;
+        const start = +d.opstart;
+        const end = +d.opend;
+        return (end - start) / 60;  // Convert seconds to minutes
       }).filter(v => !isNaN(v));
+
       const medianDuration = d3.median(opDurations)?.toFixed(1);
 
       const anestheticCounts = d3.rollup(
