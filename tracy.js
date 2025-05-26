@@ -15,7 +15,6 @@ fetch("tracy.json")
       { id: "preop_na", label: "Pre-op Sodium" },
       { id: "preop_k", label: "Pre-op Potassium" },
       { id: "preop_gluc", label: "Pre-op Glucose" },
-      { id: "intraop_rbc", label: "Intra-op RBC Transfusion (mL)" },
       { id: "intraop_uo", label: "Intra-op Urine Output (mL)" }
     ];
 
@@ -145,7 +144,6 @@ fetch("tracy.json")
             .attr("height", yScale(stats.q1) - yScale(stats.q3))
             .attr("fill", color[outcome])
             .attr("stroke", "#000")
-            // .style("cursor", "pointer")
             .on("click", () => {
               selectedBox = `${risk}-${outcome}-${variable}`;
               updateDetailsBoxFromFilter();
