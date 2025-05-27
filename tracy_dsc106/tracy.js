@@ -22,12 +22,15 @@ fetch("tracy.json")
     let selectedBox = null;
     let highlightedOutcome = null;
     let highlightedRisk = null;
+    let selectedOptype = "";
 
     const resetButton = d3.select("#resetButton")
       .on("click", () => {
         highlightedOutcome = null;
         highlightedRisk = null;
         selectedBox = null;
+        selectedOptype = "";
+        d3.select("#optypeSelector").property("value", "");
         d3.select("#detailsBox").html(`<strong>Click a boxplot</strong> or filter to see details`);
         updateOpacity();
         updateDetailsBoxFromFilter();
@@ -44,6 +47,21 @@ fetch("tracy.json")
       selector.append("option")
         .attr("value", metric.id)
         .text(metric.label);
+    });
+
+    const optypeSelector = d3.select("#optypeSelector")
+      .on("change", function () {
+        selectedOptype = this.value;
+        drawBoxPlot(currentMetric);
+        updateDetailsBoxFromFilter();
+      });
+
+    const optypes = Array.from(new Set(data.map(d => d.optype).filter(d => d)));
+    optypes.sort();
+    optypes.forEach(op => {
+      optypeSelector.append("option")
+        .attr("value", op)
+        .text(op);
     });
 
     drawBoxPlot(currentMetric);
@@ -66,7 +84,12 @@ fetch("tracy.json")
         grouped[risk] = {};
         outcomes.forEach(outcome => {
           grouped[risk][outcome] = data
-            .filter(d => d.risk === risk && d.death_inhosp === (outcome === "Died" ? 1 : 0) && d[variable] != null)
+            .filter(d =>
+              d.risk === risk &&
+              d.death_inhosp === (outcome === "Died" ? 1 : 0) &&
+              d[variable] != null &&
+              (!selectedOptype || d.optype === selectedOptype)
+            )
             .map(d => +d[variable]);
         });
       });
@@ -87,7 +110,7 @@ fetch("tracy.json")
         .call(d3.axisBottom(xScale))
         .selectAll("text")
         .style("cursor", "pointer")
-        .style("font-weight", "bold") // <- this bolds the labels
+        .style("font-weight", "bold")
         .on("click", function (event, d) {
           highlightedRisk = highlightedRisk === d ? null : d;
           updateOpacity();
@@ -99,7 +122,6 @@ fetch("tracy.json")
         .on("mouseout", function () {
           d3.select(this).style("fill", "#000");
         });
-
 
       svg.append("g")
         .attr("transform", `translate(${margin.left},0)`)
@@ -120,7 +142,12 @@ fetch("tracy.json")
 
       riskLevels.forEach((risk, i) => {
         outcomes.forEach((outcome, j) => {
-          const filtered = data.filter(d => d.risk === risk && d.death_inhosp === (outcome === "Died" ? 1 : 0) && d[variable] != null);
+          const filtered = data.filter(d =>
+            d.risk === risk &&
+            d.death_inhosp === (outcome === "Died" ? 1 : 0) &&
+            d[variable] != null &&
+            (!selectedOptype || d.optype === selectedOptype)
+          );
           const values = filtered.map(d => +d[variable]);
           if (!values.length) return;
 
@@ -215,6 +242,9 @@ fetch("tracy.json")
       if (highlightedOutcome) {
         filtered = filtered.filter(d => d.death_inhosp === (highlightedOutcome === "Died" ? 1 : 0));
       }
+      if (selectedOptype) {
+        filtered = filtered.filter(d => d.optype === selectedOptype);
+      }
 
       if (!filtered.length) {
         d3.select("#detailsBox").html(`<em>No data matching current filters.</em>`);
@@ -228,13 +258,7 @@ fetch("tracy.json")
       }
 
       const stats = getBoxStats(values);
-
-      const opDurations = filtered.map(d => {
-        const start = +d.opstart;
-        const end = +d.opend;
-        return (end - start) / 60;  // Convert seconds to minutes
-      }).filter(v => !isNaN(v));
-
+      const opDurations = filtered.map(d => (+d.opend - +d.opstart) / 60).filter(v => !isNaN(v));
       const medianDuration = d3.median(opDurations)?.toFixed(1);
 
       const anestheticCounts = d3.rollup(
@@ -257,7 +281,8 @@ fetch("tracy.json")
       d3.select("#detailsBox").html(`
         <strong>Filtered Stats:</strong><br>
         Risk: ${highlightedRisk || "All"}<br>
-        Outcome: ${highlightedOutcome || "All"}<br><br>
+        Outcome: ${highlightedOutcome || "All"}<br>
+        Operation Type: ${selectedOptype || "All"}<br><br>
         <table>
           <tr><td>Min:</td><td>${stats.min.toFixed(1)}</td></tr>
           <tr><td>Q1:</td><td>${stats.q1.toFixed(1)}</td></tr>

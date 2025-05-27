@@ -1,4 +1,4 @@
-/* General styling */
+/* Global styles */
 body {
   font-family: "Segoe UI", Roboto, sans-serif;
   background-color: #f9f9f9;
@@ -8,18 +8,43 @@ body {
 
 h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
-/* Metric selector */
-#metricSelector {
-  display: block;
-  margin: 0 auto 30px auto;
+/* Subtext below title */
+.subtext {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Dropdowns container */
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.dropdown-container label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Dropdown styles */
+#metricSelector,
+#optypeSelector {
   padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 14px;
   background-color: white;
+  min-width: 160px;
 }
 
 /* Layout container */
@@ -32,7 +57,7 @@ h2 {
   margin-bottom: 40px;
 }
 
-/* SVG styling */
+/* SVG plot box */
 svg {
   width: 300px;
   height: 350px;
@@ -41,12 +66,10 @@ svg {
   border-radius: 10px;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-  display: block;
-  margin: 0 20px; /* ← adds horizontal spacing between plots */
-  padding: 10px;   /* ← adds inner spacing inside SVG */
+  padding: 10px;
 }
 
-/* Box for showing clicked plot info */
+/* Clicked plot info */
 #detailsBox {
   max-width: 300px;
   background-color: #ffffff;
@@ -58,7 +81,11 @@ svg {
   transition: all 0.3s ease;
 }
 
-/* Table inside detailsBox */
+#detailsBox strong {
+  color: #444;
+  font-size: 15px;
+}
+
 #detailsBox table {
   width: 100%;
   margin-top: 10px;
@@ -69,27 +96,10 @@ svg {
   padding: 2px 5px;
 }
 
-#detailsBox strong {
-  color: #444;
-  font-size: 15px;
-}
-
-/* Optional: Tooltip styles */
-.tooltip {
-  position: absolute;
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 6px 10px;
-  font-size: 12px;
-  border-radius: 4px;
-  pointer-events: none;
-  display: none;
-}
-
 /* Reset button styling */
 button {
   display: block;
-  margin: 0 auto 20px auto;
+  margin-top: 15px;
   padding: 10px 16px;
   background-color: #007bff;
   color: white;
@@ -105,6 +115,7 @@ button:hover {
   background-color: #0056b3;
 }
 
+/* Plot container */
 .plot-container {
   display: flex;
   flex-direction: column;
@@ -112,19 +123,14 @@ button:hover {
   margin-bottom: 20px;
 }
 
-#resetButton {
-  margin-top: 15px;
-  padding: 10px 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.2s ease;
-}
-
-#resetButton:hover {
-  background-color: #0056b3;
+/* Tooltip (optional) */
+.tooltip {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  pointer-events: none;
+  display: none;
 }

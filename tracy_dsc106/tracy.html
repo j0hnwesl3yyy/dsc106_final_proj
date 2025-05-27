@@ -2,16 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Compact D3 Box Plots</title>
+  <title>Surgical Risk Explorer</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <link rel="stylesheet" href="tracy.css">
 </head>
 <body>
   <h2>Surgical Risk Explorer: Outcomes and Stats by Surgery Risk Level</h2>
 
-  <select id="metricSelector"></select>
+  <div class="dropdown-container">
+    <label for="metricSelector">Metric:</label>
+    <select id="metricSelector"></select>
 
-  <p style="text-align:center; margin-top: 10px; margin-bottom: 25px; font-size: 14px; color: #555;">
+    <label for="optypeSelector">Anatomical Region:</label>
+    <select id="optypeSelector">
+      <option value="">All</option>
+    </select>
+  </div>
+
+  <p class="subtext">
     Click on a legend item or risk level label (Low, Medium, High) to filter the data.
   </p>
 
