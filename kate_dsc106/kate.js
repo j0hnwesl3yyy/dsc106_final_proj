@@ -14,6 +14,7 @@ const ageSlider    = d3.select("#ageSlider"),
       heightSlider = d3.select("#heightSlider"),
       weightSlider = d3.select("#weightSlider"),
       sexFilter    = d3.select("#sexFilter"),
+      regionFilter = d3.select("#regionFilter"),
       ageTip       = d3.select("#ageSliderTooltip"),
       heightTip    = d3.select("#heightSliderTooltip"),
       weightTip    = d3.select("#weightSliderTooltip");
@@ -96,6 +97,7 @@ Promise.all([
   heightSlider.on("input", () => handleSlider("height"));
   weightSlider.on("input", () => handleSlider("weight"));
   sexFilter.on("change", updateAll);
+  regionFilter.on("change", updateAll);
 
   // Initial update
   handleSlider("age");
@@ -120,14 +122,21 @@ function updateAll() {
 }
 
 function updateSummary() {
-    const minRequired = 2;
+  const minRequired = 2;
   const summaryContainer = d3.select("#summary");
   
   // Clear previous content
   summaryContainer.html("");
   
-  let sex = sexFilter.property("value");
+  // let sex = sexFilter.property("value");
+  // let region = regionFilter.property("value");
+
+  let region = regionFilter.property("value").toLowerCase().trim();
+  let sex    = sexFilter.property(  "value").toLowerCase().trim();
+
+
   if (sex === "all") sex = "";
+  if (region === "all") region = "";
   
   const age = +ageSlider.property("value");
   const height = +heightSlider.property("value");
@@ -135,6 +144,7 @@ function updateSummary() {
   
   const filteredData = allData.filter(d =>
     (!sex || d.sex === sex) &&
+    (!region || d.region.toLowerCase().trim() === region) &&
     d.age >= age - 5 && d.age <= age + 5 &&
     d.height >= height - 5 && d.height <= height + 5 &&
     d.weight >= weight - 5 && d.weight <= weight + 5
@@ -227,142 +237,147 @@ function updateSummary() {
 }    
 
 function updateRadar() {
-const radarContainer = d3.select(".chart-container");
+  const radarContainer = d3.select(".chart-container");
 
-const age = +ageSlider.node().value;
-const height = +heightSlider.node().value;
-const weight = +weightSlider.node().value;
-const sex = sexFilter.node().value;
+  const age = +ageSlider.node().value;
+  const height = +heightSlider.node().value;
+  const weight = +weightSlider.node().value;
+  const sex = sexFilter.node().value;
+  const region = regionFilter.node().value;
 
-ageTip.text(age);
-heightTip.text(height);
-weightTip.text(weight);
+  ageTip.text(age);
+  heightTip.text(height);
+  weightTip.text(weight);
 
-let filt = labData.filter(d =>
-    d.age >= age - 5 && d.age <= age + 5 &&
-    d.height >= height - 5 && d.height <= height + 5 &&
-    d.weight >= weight - 5 && d.weight <= weight + 5
-);
+  let filt = labData.filter(d =>
+      d.age >= age - 5 && d.age <= age + 5 &&
+      d.height >= height - 5 && d.height <= height + 5 &&
+      d.weight >= weight - 5 && d.weight <= weight + 5
+  );
 
-if (sex !== "all") {
-    filt = filt.filter(d => d.sex === sex);
-}
+  if (sex !== "all") {
+      filt = filt.filter(d => d.sex === sex);
+  }
 
-if (filt.length < 0) {
-    radarContainer
-        .append("div")
-        .attr("class", "warning-message")
-        .text("⚠️ Not enough patients to generate a chart.");
-    return;
-}
+  if (region !== "all") {
+    filt = filt.filter(d => d.region === region);
+  }
 
-const testMeans = {};
-Object.values(clinical).flat().forEach(test => {
-    const values = filt.map(d => +d[test]).filter(v => isFinite(v));
-    testMeans[test] = values.length ? d3.mean(values) : null;
-});
+  if (filt.length < 0) {
+      radarContainer
+          .append("div")
+          .attr("class", "warning-message")
+          .text("⚠️ Not enough patients to generate a chart.");
+      return;
+  }
 
-const groups = Object.keys(clinical);
-const means = {};
-groups.forEach(gp => {
-    const vals = clinical[gp]
-        .flatMap(key => filt.map(d => +d[key]).filter(v => isFinite(v)));
-    means[gp] = vals.length ? d3.mean(vals) : 0;
-});
+  const testMeans = {};
+  Object.values(clinical).flat().forEach(test => {
+      const values = filt.map(d => +d[test]).filter(v => isFinite(v));
+      testMeans[test] = values.length ? d3.mean(values) : null;
+  });
 
-g.selectAll("*").remove();
+  const groups = Object.keys(clinical);
+  const means = {};
+  groups.forEach(gp => {
+      const vals = clinical[gp]
+          .flatMap(key => filt.map(d => +d[key]).filter(v => isFinite(v)));
+      means[gp] = vals.length ? d3.mean(vals) : 0;
+  });
 
-const angleSlice = 2 * Math.PI / groups.length,
-        maxVal = d3.max(Object.values(means)) || 1;
+  g.selectAll("*").remove();
 
-groups.forEach((gp, i) => {
-    const ang = i * angleSlice - Math.PI / 2,
-            x = Math.cos(ang) * radius,
-            y = Math.sin(ang) * radius;
+  const angleSlice = 2 * Math.PI / groups.length,
+          maxVal = d3.max(Object.values(means)) || 1;
 
-    g.append("line")
-        .attr("x1", 0).attr("y1", 0)
-        .attr("x2", x).attr("y2", y)
-        .attr("stroke", "#ccc");
+  groups.forEach((gp, i) => {
+      const ang = i * angleSlice - Math.PI / 2,
+              x = Math.cos(ang) * radius,
+              y = Math.sin(ang) * radius;
 
-    const labelGroup = g.append("g")
-        .attr("transform", `translate(${x * 1.3},${y * (i === 0 ? 1.1 : 1.3)})`);
+      g.append("line")
+          .attr("x1", 0).attr("y1", 0)
+          .attr("x2", x).attr("y2", y)
+          .attr("stroke", "#ccc");
 
-    const text = labelGroup.append("text")
-        .attr("text-anchor", "middle")
-        .attr("class", "axisLabel")
-        .style("font-weight", "bold")
-        .text(gp);
+      const labelGroup = g.append("g")
+          .attr("transform", `translate(${x * 1.3},${y * (i === 0 ? 1.1 : 1.3)})`);
 
-    const bbox = text.node().getBBox();
-    labelGroup.insert("rect", "text")
-        .attr("x", bbox.x - 6)
-        .attr("y", bbox.y - 4)
-        .attr("width", bbox.width + 12)
-        .attr("height", bbox.height + 8)
-        .attr("rx", 4)
-        .attr("fill", "white")
-        .attr("stroke", "#999")
-        .attr("stroke-width", 1);
-});
+      const text = labelGroup.append("text")
+          .attr("text-anchor", "middle")
+          .attr("class", "axisLabel")
+          .style("font-weight", "bold")
+          .text(gp);
 
-const radarLine = d3.lineRadial()
-    .radius((d, i) => radius * (means[d] / maxVal))
-    .angle((d, i) => i * angleSlice);
+      const bbox = text.node().getBBox();
+      labelGroup.insert("rect", "text")
+          .attr("x", bbox.x - 6)
+          .attr("y", bbox.y - 4)
+          .attr("width", bbox.width + 12)
+          .attr("height", bbox.height + 8)
+          .attr("rx", 4)
+          .attr("fill", "white")
+          .attr("stroke", "#999")
+          .attr("stroke-width", 1);
+  });
 
-g.append("path")
-    .datum(groups)
-    .attr("d", radarLine)
-    .attr("fill", "steelblue")
-    .attr("fill-opacity", 0.3)
-    .attr("stroke", "steelblue");
+  const radarLine = d3.lineRadial()
+      .radius((d, i) => radius * (means[d] / maxVal))
+      .angle((d, i) => i * angleSlice);
 
-groups.forEach((gp, i) => {
-    const ang = i * angleSlice - Math.PI / 2,
-            r0 = radius * (means[gp] / maxVal),
-            x = Math.cos(ang) * r0,
-            y = Math.sin(ang) * r0;
+  g.append("path")
+      .datum(groups)
+      .attr("d", radarLine)
+      .attr("fill", "steelblue")
+      .attr("fill-opacity", 0.3)
+      .attr("stroke", "steelblue");
 
-    g.append("circle")
-        .attr("cx", x).attr("cy", y)
-        .attr("r", 4)
-        .attr("fill", "steelblue")
-        .style("cursor", "pointer")
-        .on("mouseover", function (event) {
-            d3.select(this)
-                .transition().duration(100)
-                .attr("r", 6).attr("fill", "#3367d6");
+  groups.forEach((gp, i) => {
+      const ang = i * angleSlice - Math.PI / 2,
+              r0 = radius * (means[gp] / maxVal),
+              x = Math.cos(ang) * r0,
+              y = Math.sin(ang) * r0;
 
-            const labList = clinical[gp];
-            const rows = labList.map(name => {
-                const desc = labInfo[name] || name;
-                const val = testMeans[name];
-                return `${desc}: ${val !== null ? val.toFixed(2) : "N/A"}`;
-            });
+      g.append("circle")
+          .attr("cx", x).attr("cy", y)
+          .attr("r", 4)
+          .attr("fill", "steelblue")
+          .style("cursor", "pointer")
+          .on("mouseover", function (event) {
+              d3.select(this)
+                  .transition().duration(100)
+                  .attr("r", 6).attr("fill", "#3367d6");
 
-            chartTip.html(
-                `<strong>${gp} Averaged</strong>: ${means[gp].toFixed(2)}<br/>
-                <em>Includes:</em><br/>
-                ${rows.join("<br/>")}<br/>
-                <small style="display:block; margin-top:6px; color:gray;">
-                All lab test values are normalized between 0 and 1 <br/>
-                Values close to <strong>1</strong> are on the <strong>higher end</strong> of their reference range,<br/>
-                while values close to <strong>0</strong> are on the <strong>lower end</strong>.
-                </small>`
-            ).style("opacity", 1);
-        })
-        .on("mousemove", event => {
-            chartTip
-                .style("top", `${event.pageY - 10}px`)
-                .style("left", `${event.pageX + 10}px`);
-        })
-        .on("mouseout", function () {
-            d3.select(this)
-                .transition().duration(100)
-                .attr("r", 4).attr("fill", "steelblue");
-            chartTip.style("opacity", 0);
-        });
-});
+              const labList = clinical[gp];
+              const rows = labList.map(name => {
+                  const desc = labInfo[name] || name;
+                  const val = testMeans[name];
+                  return `${desc}: ${val !== null ? val.toFixed(2) : "N/A"}`;
+              });
+
+              chartTip.html(
+                  `<strong>${gp} Averaged</strong>: ${means[gp].toFixed(2)}<br/>
+                  <em>Includes:</em><br/>
+                  ${rows.join("<br/>")}<br/>
+                  <small style="display:block; margin-top:6px; color:gray;">
+                  All lab test values are normalized between 0 and 1 <br/>
+                  Values close to <strong>1</strong> are on the <strong>higher end</strong> of their reference range,<br/>
+                  while values close to <strong>0</strong> are on the <strong>lower end</strong>.
+                  </small>`
+              ).style("opacity", 1);
+          })
+          .on("mousemove", event => {
+              chartTip
+                  .style("top", `${event.pageY - 10}px`)
+                  .style("left", `${event.pageX + 10}px`);
+          })
+          .on("mouseout", function () {
+              d3.select(this)
+                  .transition().duration(100)
+                  .attr("r", 4).attr("fill", "steelblue");
+              chartTip.style("opacity", 0);
+          });
+  });
 }
 
 
@@ -400,6 +415,8 @@ weightSlider.on("input", updateSummary);
 sexFilter.on("change", updateRadar);
 sexFilter.on("change", updateSummary);
 
+regionFilter.on("change", updateRadar);
+regionFilter.on("change", updateSummary);
 
 function styleSexFilter() {
 const v = sexFilter.node().value;

@@ -57,14 +57,20 @@ input[type="range"]:active::-webkit-slider-thumb { background: #2a56c6; }
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 1rem;           /* side margin */
+  min-width: 160px;         /* ensure enough horizontal space */
 }
+
 .select-container label {
   margin-bottom: 4px;
   font-weight: 600;
 }
+
 .select-container select {
   padding: 4px 8px;
   font-size: 14px;
+  width: 100%;              /* so the select fills its container */
+  box-sizing: border-box;
 }
 
 .chart-container {
@@ -102,16 +108,15 @@ input[type="range"]:active::-webkit-slider-thumb { background: #2a56c6; }
 
 .controls {
   display: flex;
+  flex-wrap: wrap;          /* allow filters to wrap onto a new line */
   align-items: center;
-  justify-content: space-around;  
-  gap: 1rem;
-  
+  justify-content: space-around;
+  gap: 2rem;                /* a little extra gap */
   padding: 1rem 1.5rem;
   margin: 1rem auto;
-  max-width: 900px;              
-  
+  max-width: 900px;
   border: 2px solid #ccc;
-  border-radius: 999px;          
+  border-radius: 999px;
   background-color: #fafafa;
 }
 
